@@ -231,7 +231,7 @@ namespace WPCordovaClassLib.CordovaLib
 
         public void LoadAppPackageConfig()
         {
-            StreamResourceInfo streamInfo = Application.GetResourceStream(new Uri("config.xml", UriKind.Relative));
+            StreamResourceInfo streamInfo = Application.GetResourceStream(new Uri(CordovaView.AppRoot + "config.xml", UriKind.Relative));
 
             if (streamInfo != null)
             {

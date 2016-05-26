@@ -54,8 +54,18 @@ namespace WPCordovaClassLib
         /// </summary>
         private bool PageDidChange = false;
 
-        private static string AppRoot = "";
-
+        private static string appRoot = "";
+        public static string AppRoot
+        {
+            get
+            {
+                return appRoot;
+            }
+            set
+            {
+                appRoot = value;
+            }
+        }
 
         /// <summary>
         /// Handles native api calls
@@ -100,7 +110,7 @@ namespace WPCordovaClassLib
                 {
                     // default
 
-                    return new Uri(AppRoot + "www/index.html", UriKind.Relative);
+                    return new Uri(appRoot + "www/index.html", UriKind.Relative);
                 }
                 else
                 {
@@ -148,7 +158,7 @@ namespace WPCordovaClassLib
                 }
                 else
                 {
-                    this.StartPageUri = new Uri(AppRoot + "www/" + configHandler.ContentSrc, UriKind.Relative);
+                    this.StartPageUri = new Uri(appRoot + "www/" + configHandler.ContentSrc, UriKind.Relative);
                 }
             }
 
